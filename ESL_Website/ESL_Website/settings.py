@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import platform
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -128,4 +129,5 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+if platform.system() == 'Windows':
+    NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
