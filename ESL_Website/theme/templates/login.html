@@ -172,12 +172,13 @@
                     </div>
                 </div> -->
                 <!-- Login Form -->
-                <form class="flex flex-col gap-6">
+                <form class="flex flex-col gap-6" method="POST" action="/login/">
+                    {% csrf_token %}
                     <div class="flex flex-col gap-2">
-                        <label class="text-sm font-semibold text-on-surface-variant ml-1" for="email">Email</label>
+                        <label class="text-sm font-semibold text-on-surface-variant ml-1" for="username">Username</label>
                         <input
                             class="bg-surface-container-low border-0 rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all placeholder:text-outline/50"
-                            id="email" placeholder="name@lumina.edu" type="email" />
+                            id="username" name="username" placeholder="username" type="text" />
                     </div>
                     <div class="flex flex-col gap-2">
                         <div class="flex justify-between items-center px-1">
@@ -185,7 +186,7 @@
                         </div>
                         <input
                             class="bg-surface-container-low border-0 rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all placeholder:text-outline/50"
-                            id="password" placeholder="••••••••" type="password" />
+                            id="password" name="password" placeholder="••••••••" type="password" />
                     </div>
                     <!-- <div class="flex items-center gap-3 py-2">
                         <input class="rounded border-outline-variant text-primary focus:ring-primary" id="remember"
@@ -194,7 +195,7 @@
                             sanctuary</label>
                     </div> -->
                     <button
-                        class="w-full bg-gradient-to-b from-primary to-secondary text-white py-5 rounded-xl font-bold text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:scale-[1.01] transition-all flex items-center justify-center gap-2"
+                        class="w-full bg-gradient-to-b bg-primary from-primary to-secondary text-white py-5 rounded-xl font-bold text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:scale-[1.01] transition-all flex items-center justify-center gap-2"
                         type="submit">
                         Enter Lumina
                         <span class="material-symbols-outlined">login</span>
@@ -218,16 +219,6 @@
             </div>
             <span class="font-headline font-extrabold tracking-tighter text-xl text-on-surface">Lumina</span>
         </div>
-        <!-- <div class="hidden md:flex items-center gap-8">
-            <a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors"
-                href="#">Library</a>
-            <a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors"
-                href="#">Faculty</a>
-            <a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors"
-                href="#">Archives</a>
-            <div class="h-4 w-px bg-outline-variant/40"></div>
-            <button
-                class="bg-surface-container-highest text-on-surface-variant px-5 py-2 rounded-full text-xs font-bold hover:bg-outline-variant/30 transition-all">Support</button> -->
         </div>
     </nav>
     <!-- Bottom Ornament (Asymmetric circles/Orchard principle) -->

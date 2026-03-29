@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 def s_dashboard(request):
-    return render(request, 'pages/student_dashboard.html')
+    if request.user.is_authenticated:
+        return render(request, 'pages/student_dashboard.html')
+    return redirect('/login')

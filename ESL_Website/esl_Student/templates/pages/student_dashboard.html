@@ -1,20 +1,371 @@
 {% load static tailwind_tags %}
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="light" lang="en">
+
 <head>
-    <title>Django Tailwind</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Lumina Academy | Student Learning Interface</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#006e27",
+                        "primary": "#006e27",
+                        "on-tertiary-fixed-variant": "#5b430c",
+                        "on-secondary-fixed": "#002107",
+                        "surface": "#f1fdec",
+                        "tertiary-fixed-dim": "#e6c180",
+                        "outline": "#6b7b69",
+                        "on-tertiary-container": "#795d26",
+                        "outline-variant": "#bacbb6",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#95f59b",
+                        "secondary-fixed": "#97f89e",
+                        "primary-fixed": "#6bff83",
+                        "inverse-on-surface": "#e9f4e4",
+                        "surface-tint": "#006e27",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#141e14",
+                        "on-surface": "#141e14",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#7cdb84",
+                        "on-surface-variant": "#3b4b3a",
+                        "surface-bright": "#f1fdec",
+                        "surface-variant": "#dae6d6",
+                        "surface-dim": "#d2ddcd",
+                        "on-primary-container": "#007229",
+                        "tertiary": "#755a23",
+                        "on-primary-fixed": "#002107",
+                        "surface-container-low": "#ecf7e6",
+                        "on-secondary-fixed-variant": "#00531c",
+                        "inverse-surface": "#293328",
+                        "tertiary-container": "#ffd995",
+                        "background": "#f1fdec",
+                        "primary-fixed-dim": "#00e55b",
+                        "inverse-primary": "#00e55b",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e0ecdb",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#02732a",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#e6f1e1",
+                        "on-primary-fixed-variant": "#00531c",
+                        "primary-container": "#2eff6c",
+                        "tertiary-fixed": "#ffdea5",
+                        "surface-container-highest": "#dae6d6",
+                        "on-tertiary-fixed": "#271900"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+
+        .asymmetric-card {
+            border-top-left-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+        }
+    </style>
     {% tailwind_css %}
 </head>
 
-<body class="bg-gray-50 text-black font-serif leading-normal tracking-normal">
-
-<div class="container mx-auto">
-    <section class="flex items-center justify-center h-screen">
-        <h1 class="text-5xl">Student Dashboard</h1>
-    </section>
-</div>
+<body class="bg-background font-body text-on-surface">
+    <!-- SideNavBar (Authority: JSON & Design System) -->
+    <aside class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-slate-50 border-r border-slate-100 z-40">
+        <div class="flex flex-col gap-2 p-6 h-full">
+            <!-- Brand Identity -->
+            <div class="mb-10 flex items-center gap-3">
+                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined" data-icon="school">school</span>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-primary font-headline leading-tight">Lumina Academy</h1>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">ESL Dashboard</p>
+                </div>
+            </div>
+            <!-- Nav Links -->
+            <nav class="space-y-2">
+                <!-- Lessons - ACTIVE -->
+                <a class="flex items-center gap-4 px-4 py-3 text-primary bg-white rounded-xl shadow-sm transition-all duration-300 font-semibold font-label"
+                    href="#">
+                    <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                    <span>Lessons</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 text-slate-600 hover:bg-slate-100 hover:pl-5 transition-all duration-300 font-semibold font-label"
+                    href="#">
+                    <span class="material-symbols-outlined" data-icon="grade">grade</span>
+                    <span>Grades</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 text-slate-600 hover:bg-slate-100 hover:pl-5 transition-all duration-300 font-semibold font-label"
+                    href="#">
+                    <span class="material-symbols-outlined" data-icon="group">group</span>
+                    <span>Students</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 text-slate-600 hover:bg-slate-100 hover:pl-5 transition-all duration-300 font-semibold font-label"
+                    href="/logout/">
+                    <span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    <span>Logout</span>
+                </a>
+            </nav>
+            <div class="mt-auto pt-6 border-t border-slate-200/50">
+                <div class="flex items-center gap-3 p-2 bg-white/50 rounded-xl">
+                    <img class="w-10 h-10 rounded-lg object-cover" data-alt="ESL Faculty member profile avatar"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBfgfmUal6hBv1YIUmV8lMA3SKgDJoCF1qmHSU1b5RSZGgr3C9QdSrEg-094KiJmja17akM_Gq3FggRufH83cx7ypeJLhHHtyPcd_WhjF7pmZ52JQsAjnsPJJ3tyUdEjDkaOZARNU8AjQ80ZJ6s6Rv4ChfaKO-nPm9ZPcvMfFEStqm2psz2qIGL3r8W83jvTCDv1XHuO5wyP2wrQgeo5q5kyM3wSlu7GFzhjWX33UL7c_uGc8NshtgHxRMsido5MmaSFqoE7pMKtta" />
+                    <div class="overflow-hidden">
+                        <p class="text-xs font-bold truncate">Julian Thorne</p>
+                        <p class="text-[10px] text-slate-500">Master Instructor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- Main Canvas -->
+    <main class="ml-64 min-h-screen p-10 bg-surface-container-lowest">
+        <!-- Header Section -->
+        <header class="mb-12 flex justify-between items-end">
+            <div class="max-w-2xl">
+                <h2 class="text-5xl font-extrabold font-headline text-on-surface tracking-tighter mb-4 leading-[1.1]">
+                    Your Scholarly <span class="text-primary italic">Sanctuary</span>
+                </h2>
+                <p class="text-on-surface-variant text-lg leading-relaxed max-w-lg">
+                    Continue your journey through the nuances of modern English. Your progress is a testament to your
+                    dedication.
+                </p>
+            </div>
+        </header>
+        <!-- Bento Grid Layout -->
+        <div class="grid grid-cols-12 gap-8">
+            <!-- Hero Card: Resume Lesson -->
+            <section
+                class="col-span-8 relative group overflow-hidden asymmetric-card bg-primary min-h-[400px] flex flex-col justify-end p-10 text-white shadow-2xl">
+                <div class="absolute inset-0 z-0">
+                    <img class="w-full h-full object-cover opacity-40 mix-blend-overlay"
+                        data-alt="Quiet sun-drenched library with classic books"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuAqZw-yEnHx4bFKQAJFgeu24JPoy-Pr7HKvzagHi2vWGyPGlJfPPJL6wht5gfij61InLxd91HIxyHfH2SPQky5IhgDvjqQ22oRMBEFMXDCId6bcbmnNm-7DL6IRcZkYYW8qnfPGkeW3k6vaeafo-BX9zxPrnK4lY8ytsJaVJMJdvCS415pG60fmqMUCEtapxIthO_g4VqMq7wqCLBOT3klqKsr2ElDdyPQCj93LGl-XKenVkpozBEy5vG8cVyaoG_5RK02x_rpppq" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+                </div>
+                <div class="relative z-10">
+                    <span
+                        class="px-3 py-1 bg-white/20 glass-effect rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block">Module
+                        4: Advanced Subjunctives</span>
+                    <h3 class="text-4xl font-bold font-headline mb-6 max-w-md leading-tight">Mastering the Hypothetical
+                        in Business English</h3>
+                    <div class="flex items-center gap-6">
+                        <button
+                            class="bg-gradient-to-b from-white to-slate-100 text-primary px-8 py-4 rounded-xl font-bold flex items-center gap-3 shadow-lg hover:scale-105 transition-transform duration-150">
+                            Resume Lesson
+                            <span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+                        </button>
+                        <div class="flex -space-x-3">
+                            <img class="w-8 h-8 rounded-full border-2 border-primary object-cover"
+                                data-alt="Student avatar thumbnail"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUWASe4blbj3x7-WjN3c0hpy4oKXd9JhQynoigQn2vGljdtm_3aUar7W2MxdeVe-O0QMrgzGXlHoVJxF5GdAoPr29RxX_SdMkh0GtLu5La93hNmcrgHRfKECZ62Iw208zvxeNhEwCr4zcf8zAVhBjFxMSgzMWTQXWnsn1hRFvZtlnkhdDlhOw-kvDrLlOmpEO1o02bQyOxcb7sKbElFkkWDCImPl06jg27Bw7jEJkZRDuJSxza8hhArv-g4jdXZzwqrpUfhYP2hoag" />
+                            <img class="w-8 h-8 rounded-full border-2 border-primary object-cover"
+                                data-alt="Student avatar thumbnail"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhqDj3vowmX_766BKQhsU9vIAwHBIAu9ZAvNkFYqc-f0e1oYNp9aVWvsCyVwOa9LC5O-IKmhlQillzX2g3Ac63b2iQDzoLZmPa_TXO6OUZqZUrhWr5_pFyPddFCiSOuRBhCdDk3EJuqhZTUEtfA1EjYm3PD52amYqPqX1MsZE2uUNFEz-Y9EA-oA1R7mEUP1uqB2IJmDovVI78AI3h2JbA65QRss18ko7_jQa0tAtzUnG5J-RzQkzDWu9JjXrsxlTpeFnm4gEjsEtv" />
+                            <div
+                                class="w-8 h-8 rounded-full border-2 border-primary bg-secondary flex items-center justify-center text-[10px] font-bold">
+                                +12</div>
+                        </div>
+                        <p class="text-sm text-white/80 font-medium">Currently learning this</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Global Progress Chart -->
+            <section
+                class="col-span-4 bg-surface-container-low p-8 rounded-xl flex flex-col justify-between border border-outline-variant/15">
+                <div>
+                    <h4 class="text-xl font-bold font-headline mb-2 text-on-surface">Curriculum Progress</h4>
+                    <p class="text-sm text-on-surface-variant mb-8">Overall mastery across modules</p>
+                    <div class="flex items-end justify-between gap-2 h-40 mb-8 px-2">
+                        <div class="w-full bg-secondary-container rounded-t-lg transition-all" style="height: 40%;">
+                        </div>
+                        <div class="w-full bg-secondary-container rounded-t-lg transition-all" style="height: 65%;">
+                        </div>
+                        <div class="w-full bg-secondary-container rounded-t-lg transition-all" style="height: 45%;">
+                        </div>
+                        <div class="w-full bg-primary rounded-t-lg transition-all" style="height: 85%;"></div>
+                        <div class="w-full bg-secondary-container rounded-t-lg transition-all" style="height: 30%;">
+                        </div>
+                        <div class="w-full bg-secondary-container rounded-t-lg transition-all" style="height: 55%;">
+                        </div>
+                        <div class="w-full bg-secondary-container rounded-t-lg transition-all" style="height: 70%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center p-4 bg-white rounded-xl shadow-sm">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-secondary"></div>
+                            <span class="text-sm font-semibold">Vocabulary</span>
+                        </div>
+                        <span class="text-sm font-bold">88%</span>
+                    </div>
+                    <div class="flex justify-between items-center p-4 bg-white rounded-xl shadow-sm">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-tertiary"></div>
+                            <span class="text-sm font-semibold">Grammar</span>
+                        </div>
+                        <span class="text-sm font-bold">64%</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Curriculum List -->
+            <section class="col-span-7 space-y-6">
+                <div class="flex justify-between items-center">
+                    <h4 class="text-2xl font-extrabold font-headline">Active Curriculum</h4>
+                    <button class="text-secondary font-bold text-sm hover:underline">View All Syllabus</button>
+                </div>
+                <div class="space-y-4">
+                    <!-- Lesson 1 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-center justify-between border border-outline-variant/10">
+                        <div class="flex items-center gap-5">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-3xl" data-icon="translate">translate</span>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-on-surface">Idiomatic Expressions in Finance</h5>
+                                <p class="text-sm text-on-surface-variant">24 Vocabulary Cards • 15 Minutes</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold rounded-full">COMPLETED</span>
+                            <span class="material-symbols-outlined text-secondary" data-icon="check_circle"
+                                style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        </div>
+                    </div>
+                    <!-- Lesson 2 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-center justify-between border border-outline-variant/10">
+                        <div class="flex items-center gap-5">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container">
+                                <span class="material-symbols-outlined text-3xl" data-icon="edit_note">edit_note</span>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-on-surface">Structure of Persuasive Essays</h5>
+                                <p class="text-sm text-on-surface-variant">Writing Drill • 45 Minutes</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="px-3 py-1 bg-primary-fixed text-on-primary-fixed text-[10px] font-bold rounded-full">IN
+                                PROGRESS</span>
+                            <div class="w-12 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="w-1/2 h-full bg-primary"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Lesson 3 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-center justify-between border border-outline-variant/10">
+                        <div class="flex items-center gap-5">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-slate-400">
+                                <span class="material-symbols-outlined text-3xl" data-icon="mic">mic</span>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-on-surface">Phonetics: The Neutral Accent</h5>
+                                <p class="text-sm text-on-surface-variant">Audio Lab • 20 Minutes</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-slate-300" data-icon="lock">lock</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Interactive Drill -->
+            <section
+                class="col-span-5 bg-surface-container-high asymmetric-card p-10 flex flex-col border border-outline-variant/20">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="w-8 h-8 rounded-full bg-tertiary flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-sm" data-icon="bolt"
+                            style="font-variation-settings: 'FILL' 1;">bolt</span>
+                    </div>
+                    <h4 class="text-xl font-bold font-headline">Quick Drill: Verb Tense</h4>
+                </div>
+                <div class="mb-10">
+                    <p class="text-on-surface-variant italic mb-4">Select the correct form:</p>
+                    <p class="text-2xl font-medium leading-relaxed">
+                        If she <span
+                            class="bg-white px-3 py-1 rounded-lg border-b-2 border-primary text-primary font-bold shadow-sm">_______</span>
+                        more time, she would have finished the project.
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <button
+                        class="w-full py-4 px-6 bg-white rounded-xl text-left font-bold hover:bg-primary hover:text-white transition-all group flex justify-between items-center shadow-sm">
+                        <span>had had</span>
+                        <span class="material-symbols-outlined opacity-0 group-hover:opacity-100"
+                            data-icon="arrow_forward">arrow_forward</span>
+                    </button>
+                    <button
+                        class="w-full py-4 px-6 bg-white rounded-xl text-left font-bold hover:bg-primary hover:text-white transition-all group flex justify-between items-center shadow-sm">
+                        <span>has had</span>
+                        <span class="material-symbols-outlined opacity-0 group-hover:opacity-100"
+                            data-icon="arrow_forward">arrow_forward</span>
+                    </button>
+                    <button
+                        class="w-full py-4 px-6 bg-white rounded-xl text-left font-bold hover:bg-primary hover:text-white transition-all group flex justify-between items-center shadow-sm">
+                        <span>would have</span>
+                        <span class="material-symbols-outlined opacity-0 group-hover:opacity-100"
+                            data-icon="arrow_forward">arrow_forward</span>
+                    </button>
+                </div>
+                <div
+                    class="mt-auto pt-8 flex items-center justify-between text-xs font-bold text-on-surface-variant uppercase tracking-widest">
+                    <span>12 / 20 Drills</span>
+                    <div class="flex gap-1">
+                        <div class="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Global FAB (Highly Contextual - Only on Home/Dashboards) -->
+    <button
+        class="fixed bottom-8 right-8 w-16 h-16 bg-gradient-to-br from-primary to-secondary text-white rounded-2xl shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-150 z-50">
+        <span class="material-symbols-outlined text-3xl" data-icon="add_comment">add_comment</span>
+    </button>
 </body>
+
 </html>
