@@ -1,0 +1,419 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Students | Lumina Academy</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#02732a",
+                        "on-tertiary-fixed-variant": "#5b430c",
+                        "on-background": "#141e14",
+                        "background": "#f1fdec",
+                        "on-secondary-fixed": "#002107",
+                        "on-surface-variant": "#3b4b3a",
+                        "outline": "#6b7b69",
+                        "on-tertiary-fixed": "#271900",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#6bff83",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#97f89e",
+                        "surface-container-highest": "#dae6d6",
+                        "surface-container": "#e6f1e1",
+                        "on-primary-fixed": "#002107",
+                        "outline-variant": "#bacbb6",
+                        "on-tertiary-container": "#795d26",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#e9f4e4",
+                        "surface-container-low": "#ecf7e6",
+                        "tertiary": "#755a23",
+                        "secondary-container": "#95f59b",
+                        "surface-container-high": "#e0ecdb",
+                        "secondary": "#006e27",
+                        "surface": "#f1fdec",
+                        "on-surface": "#141e14",
+                        "surface-tint": "#006e27",
+                        "primary": "#006e27",
+                        "tertiary-fixed-dim": "#e6c180",
+                        "primary-container": "#2eff6c",
+                        "on-primary-fixed-variant": "#00531c",
+                        "inverse-primary": "#00e55b",
+                        "tertiary-fixed": "#ffdea5",
+                        "secondary-fixed-dim": "#7cdb84",
+                        "surface-variant": "#dae6d6",
+                        "surface-dim": "#d2ddcd",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f1fdec",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#293328",
+                        "tertiary-container": "#ffd995",
+                        "on-primary-container": "#007229",
+                        "on-secondary-fixed-variant": "#00531c",
+                        "primary-fixed-dim": "#00e55b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .editorial-asymmetry {
+            border-top-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+    {% tailwind_css %}
+</head>
+
+<body class="bg-background font-body text-on-background antialiased">
+    <!-- Sidebar Navigation -->
+    <aside
+        class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-950 py-8 px-4 font-['Plus_Jakarta_Sans'] font-medium">
+        <div class="mb-12 px-4">
+            <h1 class="text-xl font-black font-['Manrope'] text-primary tracking-tighter">Lumina
+                Academy</h1>
+            <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">ESL Faculty</p>
+        </div>
+        <nav class="flex-1 space-y-2">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-1 transition-transform duration-200"
+                href="../dashboard/">
+                <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                <span>Lessons</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-1 transition-transform duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="grade">grade</span>
+                <span>Grades</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-emerald-700 dark:text-emerald-300 font-bold border-r-4 border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl hover:translate-x-1 transition-transform duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="group">group</span>
+                <span>Students</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-1 transition-transform duration-200"
+                href="/logout/">
+                <span class="material-symbols-outlined" data-icon="group">logout</span>
+                <span>Logout</span>
+            </a>
+        </nav>
+        <div class="mt-auto px-4 py-4 flex items-center gap-3 bg-slate-100 dark:bg-slate-900 rounded-2xl">
+            <img alt="Teacher Profile" class="w-10 h-10 rounded-full bg-surface-container"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8tLlEoSOqdH2dOJUmjBtj2OCVkDCyYmJPEFeBaIZVOXR7vc_svcph1m8Azn3_fsxumaZF6flFhFghfvfeN4RNcn1JqhiGOBBbwPM9qlv35NI2csh7Y3PiIJHL5K27RfM4pRYcCNg2SuEqa9FWlxhFdeZHpZ7-jIHP2J7g3TyFiVn3cJLO1MTOmFVodt4Y_fayh4_sfQ9AAL-Q7zeanWHKiulWXbYtw-mF9O59q30cI0FA1kOkeNTwnQmAoU6_J26ef3XDWvaud0GR" />
+            <div>
+                <p class="text-sm font-bold text-on-surface">Dr. Aristhène</p>
+                <p class="text-[10px] text-slate-500">Senior Linguist</p>
+            </div>
+        </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="md:ml-64 min-h-screen">
+        <!-- Top App Bar -->
+        <header
+            class="sticky top-0 z-50 glass-nav flex justify-between items-center w-full px-8 py-4 font-['Manrope'] tracking-tight">
+            <div class="flex items-center gap-4">
+                <h2 class="text-2xl font-bold tracking-tighter text-blue-800 dark:text-blue-300">Students</h2>
+                <span class="text-slate-400">/</span>
+                <span class="text-slate-500 text-sm">Directory</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="relative hidden sm:block">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+                    <input
+                        class="bg-surface-container-low border-none rounded-xl py-2 pl-10 pr-4 w-64 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all"
+                        placeholder="Search scholars..." type="text" />
+                </div>
+                <div class="flex gap-2">
+                    <button class="p-2 text-slate-500 hover:text-blue-700 transition-colors">
+                        <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                    </button>
+                    <button class="p-2 text-slate-500 hover:text-blue-700 transition-colors">
+                        <span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <!-- Editorial Header -->
+        <div class="px-8 pt-12 pb-8">
+            <h1
+                class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-background mb-4 leading-none">
+                The Student <br /><span class="text-primary italic">Cohort</span>.
+            </h1>
+            <p class="text-lg text-on-surface-variant max-w-xl font-body font-light">
+                Monitor the progress of your academic artisans. Review linguistic milestones and nurture individual
+                growth within the sanctuary.
+            </p>
+        </div>
+        <!-- Filter Bar -->
+        <div class="px-8 mb-12 flex flex-wrap items-center gap-4">
+            <div class="flex bg-surface-container p-1 rounded-full">
+                <button
+                    class="px-6 py-2 bg-surface-container-lowest text-primary font-bold rounded-full text-sm shadow-sm">All
+                    Students</button>
+                <button
+                    class="px-6 py-2 text-on-surface-variant hover:text-primary transition-colors text-sm">Active</button>
+                <button
+                    class="px-6 py-2 text-on-surface-variant hover:text-primary transition-colors text-sm">Inactive</button>
+            </div>
+            <div class="h-8 w-[1px] bg-outline-variant/30"></div>
+            <div class="flex gap-2">
+                <span
+                    class="px-4 py-2 bg-tertiary-container/30 text-tertiary font-medium rounded-full text-xs flex items-center gap-2">
+                    Level: C1
+                    <span class="material-symbols-outlined text-sm cursor-pointer">close</span>
+                </span>
+                <button
+                    class="px-4 py-2 border border-outline-variant/20 rounded-full text-xs flex items-center gap-2 hover:bg-surface-container transition-colors">
+                    <span class="material-symbols-outlined text-sm">tune</span>
+                    More Filters
+                </button>
+            </div>
+        </div>
+        <!-- Students Grid -->
+        <section class="px-8 pb-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            <!-- Student Card 1 -->
+            <div
+                class="group relative bg-surface-container-low editorial-asymmetry overflow-hidden transition-all duration-300 hover:translate-y-[-4px]">
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="relative">
+                            <img alt="Elena G."
+                                class="w-20 h-20 object-cover rounded-2xl shadow-lg border-4 border-surface-container-lowest"
+                                data-alt="portrait of a young woman with a thoughtful expression in a bright minimalist study environment"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9L8k3Bf5MWyTqHaIV7TNfvtmXrQyL0jE6uDYUOoaqFemJjTXEeFmYl_Apij_nzsojlT7wjWXr19EdhvV5z2nrkmKKpZa8rogT7RcHDgSqhDm6KG9cUsf-xGtujb1c2X5oioFsOIUNoBz42wt3lz9Svju-FpmnHJ0blB4gBQpK5MxXPgPmtHOnSh1tWj2pAGxknfkaL4B7SehkqkqKjBGPB6CNy0KuBlinyMrP018xRCZPjMUX2DTDbZNAvenV47Hj61CKNcxRLzRB" />
+                            <div
+                                class="absolute -bottom-1 -right-1 w-5 h-5 bg-primary rounded-full border-2 border-surface-container-low shadow-sm">
+                            </div>
+                        </div>
+                        <span
+                            class="px-3 py-1 bg-primary-container text-on-primary-container text-[10px] font-bold rounded-full uppercase tracking-widest">Mastery:
+                            C1</span>
+                    </div>
+                    <h3 class="text-2xl font-headline font-bold text-on-background mb-1">Elena Grigoras</h3>
+                    <p class="text-sm text-on-surface-variant mb-6">Last active: 12 minutes ago</p>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-secondary-fixed border-2 border-surface-container-low flex items-center justify-center text-[10px] font-bold">
+                                IT</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-tertiary-fixed border-2 border-surface-container-low flex items-center justify-center text-[10px] font-bold">
+                                FR</div>
+                        </div>
+                        <span class="text-[10px] text-outline uppercase font-bold tracking-tighter">Multilingual
+                            Track</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <button
+                            class="flex-1 py-3 px-4 bg-gradient-to-b from-primary to-primary-container text-on-primary-container font-bold rounded-xl text-sm transition-transform active:scale-95 shadow-md shadow-primary/10">
+                            Message
+                        </button>
+                        <button
+                            class="p-3 bg-surface-container-highest text-on-surface-variant rounded-xl hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Student Card 2 -->
+            <div
+                class="group relative bg-surface-container-low editorial-asymmetry overflow-hidden transition-all duration-300 hover:translate-y-[-4px]">
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="relative">
+                            <img alt="Julian K."
+                                class="w-20 h-20 object-cover rounded-2xl shadow-lg border-4 border-surface-container-lowest"
+                                data-alt="Close-up profile of a man with glasses looking at a screen with warm natural light from a window"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtnEsiPg2P68YvSpCqj268i_p7wuJvUuIXz_e4OhM-8gF_Ecs7DULf3PS6bmLxOPOzt6td5jK_Iebn6yUManqmLUpyUN2VDPCzHCCc1zFEG6pGRFqVaUQYxWlc-eclCxLFSLMGZdmfEcjL3RDzhOfNJlogbm6IwDFDRWro25uMRD1q_C2r5glwPIw3MOgVjotY-JVKeJBxqW3z_ER4DgM9006xEyvrlBsbMkgKqZqUZDQCm66O2Kr8Yuyzv_FpV6HlmIeiP8WhTQgh" />
+                            <div
+                                class="absolute -bottom-1 -right-1 w-5 h-5 bg-outline rounded-full border-2 border-surface-container-low shadow-sm">
+                            </div>
+                        </div>
+                        <span
+                            class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded-full uppercase tracking-widest">Mastery:
+                            B2</span>
+                    </div>
+                    <h3 class="text-2xl font-headline font-bold text-on-background mb-1">Julian Kross</h3>
+                    <p class="text-sm text-on-surface-variant mb-6">Last active: 2 days ago</p>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-secondary-fixed border-2 border-surface-container-low flex items-center justify-center text-[10px] font-bold">
+                                DE</div>
+                        </div>
+                        <span class="text-[10px] text-outline uppercase font-bold tracking-tighter">Business
+                            Focus</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <button
+                            class="flex-1 py-3 px-4 bg-gradient-to-b from-primary to-primary-container text-on-primary-container font-bold rounded-xl text-sm transition-transform active:scale-95 shadow-md shadow-primary/10">
+                            Message
+                        </button>
+                        <button
+                            class="p-3 bg-surface-container-highest text-on-surface-variant rounded-xl hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Student Card 3 -->
+            <div
+                class="group relative bg-surface-container-low editorial-asymmetry overflow-hidden transition-all duration-300 hover:translate-y-[-4px]">
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="relative">
+                            <img alt="Anya M."
+                                class="w-20 h-20 object-cover rounded-2xl shadow-lg border-4 border-surface-container-lowest"
+                                data-alt="a woman smiling holding a book in a library with soft bokeh lighting and green plants"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmD-sFGN2nYabBH_YoKyOce9eFdL3Zx5B58Cw2p7BPvMsK1wqN3MiXYOgzNfaYfyOWEfeb8_cYg3NbEEM2RzxKn0XokTx-a1f4QptQ0NH5crTyVDRRSdg3xYQiT7-sw59_kZ5Ho4gxVmLudRUiFFPwOdI67Ee-kqUZ0FwwlYq4QLIqCjmAJS6ArCeicagmFwU0nxyoo2bU143HtkIS84OOzkCahUV0TgdQcEolAo5lxGGDxyMVvZUPA26A6P0lKUUDl1utdpF0RUwi" />
+                            <div
+                                class="absolute -bottom-1 -right-1 w-5 h-5 bg-primary rounded-full border-2 border-surface-container-low shadow-sm">
+                            </div>
+                        </div>
+                        <span
+                            class="px-3 py-1 bg-primary-container text-on-primary-container text-[10px] font-bold rounded-full uppercase tracking-widest">Mastery:
+                            C2</span>
+                    </div>
+                    <h3 class="text-2xl font-headline font-bold text-on-background mb-1">Anya Morozova</h3>
+                    <p class="text-sm text-on-surface-variant mb-6">Last active: Just now</p>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-secondary-fixed border-2 border-surface-container-low flex items-center justify-center text-[10px] font-bold">
+                                RU</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-primary-fixed border-2 border-surface-container-low flex items-center justify-center text-[10px] font-bold">
+                                EN</div>
+                        </div>
+                        <span class="text-[10px] text-outline uppercase font-bold tracking-tighter">Academic
+                            Thesis</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <button
+                            class="flex-1 py-3 px-4 bg-gradient-to-b from-primary to-primary-container text-on-primary-container font-bold rounded-xl text-sm transition-transform active:scale-95 shadow-md shadow-primary/10">
+                            Message
+                        </button>
+                        <button
+                            class="p-3 bg-surface-container-highest text-on-surface-variant rounded-xl hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Student Card 4 -->
+            <div
+                class="group relative bg-surface-container-low editorial-asymmetry overflow-hidden transition-all duration-300 hover:translate-y-[-4px]">
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="relative">
+                            <img alt="Saito T."
+                                class="w-20 h-20 object-cover rounded-2xl shadow-lg border-4 border-surface-container-lowest"
+                                data-alt="A man in a modern office looking out a large window at a city skyline during dusk"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXwdNezvZ5h4xMniEgu_Q0QiHa4iWp-LPLEbE71kiru8Xgzqh-wRRvv3HJADuHWHhRKVxTUTlaA18uwNzmL2oZMpKsa8Htjw6kQRcleyhRQ6YSPAkSsIaUO5q6t98fvwtFP-XfSUsQPwPBgUCMahGy2YKfzs2oyQ5g99l4PggUB0qyyutTDUxTNibllURqHxU1d0Qd29R9zdob7svKEbfGkzOJbi9hObdL47mFWlmu81Z-WIC7qUQahkQaf_IZ2Ux-BQA69bD7_bnC" />
+                            <div
+                                class="absolute -bottom-1 -right-1 w-5 h-5 bg-primary rounded-full border-2 border-surface-container-low shadow-sm">
+                            </div>
+                        </div>
+                        <span
+                            class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded-full uppercase tracking-widest">Mastery:
+                            B1</span>
+                    </div>
+                    <h3 class="text-2xl font-headline font-bold text-on-background mb-1">Saito Tanaka</h3>
+                    <p class="text-sm text-on-surface-variant mb-6">Last active: 4 hours ago</p>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-tertiary-fixed border-2 border-surface-container-low flex items-center justify-center text-[10px] font-bold">
+                                JP</div>
+                        </div>
+                        <span class="text-[10px] text-outline uppercase font-bold tracking-tighter">Foundation
+                            Track</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <button
+                            class="flex-1 py-3 px-4 bg-gradient-to-b from-primary to-primary-container text-on-primary-container font-bold rounded-xl text-sm transition-transform active:scale-95 shadow-md shadow-primary/10">
+                            Message
+                        </button>
+                        <button
+                            class="p-3 bg-surface-container-highest text-on-surface-variant rounded-xl hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Empty State / Add Student "Asymmetric Card" -->
+            <div
+                class="border-2 border-dashed border-outline-variant/30 editorial-asymmetry flex flex-col items-center justify-center p-8 text-center bg-surface-container/20 group hover:border-primary/50 transition-colors">
+                <div
+                    class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <span
+                        class="material-symbols-outlined text-3xl text-outline group-hover:text-primary">person_add</span>
+                </div>
+                <h3 class="text-xl font-headline font-bold text-outline">Invite New Scholar</h3>
+                <p class="text-sm text-slate-400 mt-2 max-w-[180px]">Expand your sanctuary with new linguistic talent.
+                </p>
+            </div>
+        </section>
+    </main>
+    <!-- Mobile Bottom Navigation -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 glass-nav flex justify-around items-center py-3 px-6 z-50">
+        <button class="flex flex-col items-center gap-1 text-slate-500">
+            <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest">Lessons</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-500">
+            <span class="material-symbols-outlined" data-icon="grade">grade</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest">Grades</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-primary">
+            <span class="material-symbols-outlined" data-icon="group"
+                style="font-variation-settings: 'FILL' 1;">group</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest">Students</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-500">
+            <span class="material-symbols-outlined" data-icon="settings">settings</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest">Settings</span>
+        </button>
+    </nav>
+</body>
+
+</html>

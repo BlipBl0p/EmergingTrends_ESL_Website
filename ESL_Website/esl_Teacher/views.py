@@ -12,3 +12,8 @@ def t_dashboard(request):
         }
         return render(request, 'pages/teacher_dashboard.html', info)
     return redirect('/login')
+
+def t_studentlist(request):
+    if request.user.is_authenticated:
+        return render(request, 'pages/teacher_studentlist.html')
+    return redirect('/login')
