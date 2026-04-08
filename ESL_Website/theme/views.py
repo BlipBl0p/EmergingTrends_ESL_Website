@@ -18,7 +18,7 @@ def loginpage(request, user=None):
         if user is not None:
             form = login(request, user)
             print(f' welcome {username} !!')
-            return redirect('/students/dashboard/')
+            return redirect('/teachers/dashboard/')
         else:
             messages.info(request, f'account done not exit plz sign in')
     form = AuthenticationForm()
