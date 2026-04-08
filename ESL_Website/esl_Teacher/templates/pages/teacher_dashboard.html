@@ -1,20 +1,424 @@
 {% load static tailwind_tags %}
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="light" lang="en">
+
 <head>
-    <title>Django Tailwind</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Teacher Dashboard | Lumina Academy</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#006e27",
+                        "primary": "#006e27",
+                        "on-tertiary-fixed-variant": "#5b430c",
+                        "on-secondary-fixed": "#002107",
+                        "surface": "#f1fdec",
+                        "tertiary-fixed-dim": "#e6c180",
+                        "outline": "#6b7b69",
+                        "on-tertiary-container": "#795d26",
+                        "outline-variant": "#bacbb6",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#95f59b",
+                        "secondary-fixed": "#97f89e",
+                        "primary-fixed": "#6bff83",
+                        "inverse-on-surface": "#e9f4e4",
+                        "surface-tint": "#006e27",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#141e14",
+                        "on-surface": "#141e14",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#7cdb84",
+                        "on-surface-variant": "#3b4b3a",
+                        "surface-bright": "#f1fdec",
+                        "surface-variant": "#dae6d6",
+                        "surface-dim": "#d2ddcd",
+                        "on-primary-container": "#007229",
+                        "tertiary": "#755a23",
+                        "on-primary-fixed": "#002107",
+                        "surface-container-low": "#ecf7e6",
+                        "on-secondary-fixed-variant": "#00531c",
+                        "inverse-surface": "#293328",
+                        "tertiary-container": "#ffd995",
+                        "background": "#f1fdec",
+                        "primary-fixed-dim": "#00e55b",
+                        "inverse-primary": "#00e55b",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e0ecdb",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#02732a",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#e6f1e1",
+                        "on-primary-fixed-variant": "#00531c",
+                        "primary-container": "#2eff6c",
+                        "tertiary-fixed": "#ffdea5",
+                        "surface-container-highest": "#dae6d6",
+                        "on-tertiary-fixed": "#271900"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
     {% tailwind_css %}
 </head>
 
-<body class="bg-gray-50 text-black font-serif leading-normal tracking-normal">
-
-<div class="container mx-auto">
-    <section class="flex items-center justify-center h-screen">
-        <h1 class="text-5xl">Teacher Dashboard</h1>
-    </section>
-</div>
+<body class="bg-background font-body text-on-surface antialiased">
+    <!-- TopNavBar -->
+    <header
+        class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none docked full-width top-0 sticky z-50">
+        <div class="flex justify-between items-center px-8 py-4 w-full max-w-[1920px] mx-auto">
+            <div class="text-2xl font-extrabold tracking-tighter text-primary font-headline">Lumina Academy</div>
+            <div class="hidden md:flex items-center gap-8">
+                <nav class="flex gap-6 font-manrope tracking-tight text-sm font-medium">
+                    <a class="text-blue-700 dark:text-blue-400 font-bold border-b-2 border-blue-700 hover:text-blue-600 transition-colors"
+                        href="#">Lessons</a>
+                    <a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-600 transition-colors"
+                        href="#">Grades</a>
+                    <a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-600 transition-colors"
+                        href="#">Students</a>
+                    <a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-600 transition-colors"
+                        href="#">Settings</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button class="p-2 text-slate-500 hover:text-blue-600 transition-colors"><span
+                            class="material-symbols-outlined">notifications</span></button>
+                    <button class="p-2 text-slate-500 hover:text-blue-600 transition-colors"><span
+                            class="material-symbols-outlined">account_circle</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="bg-slate-100 dark:bg-slate-800 h-px w-full"></div>
+    </header>
+    <div class="flex min-h-screen">
+        <!-- SideNavBar -->
+        <aside
+            class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-slate-50 dark:bg-slate-950 border-r border-slate-100 dark:border-slate-800 z-40 hidden lg:flex">
+            <div class="flex flex-col gap-2 p-6 h-full">
+                <div class="flex items-center gap-3 mb-8 pt-4">
+                    <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-blue-800 dark:text-blue-300 font-headline">Lumina Admin</h2>
+                        <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">ESL Faculty</p>
+                    </div>
+                </div>
+                <nav class="space-y-2 font-plus-jakarta text-sm font-semibold">
+                    <a class="flex items-center gap-3 px-4 py-3 text-blue-700 dark:text-blue-400 bg-white dark:bg-slate-900 rounded-xl shadow-sm transition-all duration-300"
+                        href="#">
+                        <span class="material-symbols-outlined">menu_book</span>
+                        <span>Lessons</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900/50 rounded-xl hover:pl-6 transition-all duration-300"
+                        href="#">
+                        <span class="material-symbols-outlined">grade</span>
+                        <span>Grades</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900/50 rounded-xl hover:pl-6 transition-all duration-300"
+                        href="#">
+                        <span class="material-symbols-outlined">group</span>
+                        <span>Students</span>
+                    </a>
+                    <a class="flex items-center gap-4 px-4 py-3 text-slate-600 hover:bg-slate-100 hover:pl-5 transition-all duration-300 font-semibold font-label"
+                        href="/logout/">
+                        <span class="material-symbols-outlined" data-icon="logout">logout</span>
+                        <span>Logout</span>
+                    </a>
+                </nav>
+                <div class="mt-auto p-4 bg-surface-container-low rounded-2xl">
+                    <p class="text-xs text-on-surface-variant mb-2">Morning Shift</p>
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-secondary"></div>
+                        <span class="text-sm font-bold text-secondary">Active Now</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 lg:ml-64 p-8 lg:p-12">
+            <div class="max-w-7xl mx-auto">
+                <!-- Welcome & Date Header -->
+                <header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div>
+                        <h1
+                            class="text-5xl lg:text-6xl font-headline font-extrabold tracking-tight text-on-surface mb-2">
+                            Faculty Dashboard</h1>
+                        <p class="text-lg text-on-surface-variant font-medium">Welcome back, Professor {{username}}. Today is
+                            Oct 24th.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <button
+                            class="px-6 py-3 bg-gradient-to-b from-primary to-primary-container text-white font-bold rounded-xl shadow-md hover:opacity-90 transition-opacity flex items-center gap-2">
+                            <span class="material-symbols-outlined">add</span>
+                            New Lesson Plan
+                        </button>
+                    </div>
+                </header>
+                <!-- Bento Grid Layout -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                    <!-- Primary: Ongoing Lessons -->
+                    <section class="md:col-span-8 space-y-8">
+                        <div class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-8">
+                                <span
+                                    class="px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold uppercase tracking-wider">Live
+                                    Now</span>
+                            </div>
+                            <h3 class="text-2xl font-headline font-bold mb-6 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">play_circle</span>
+                                Ongoing Lessons
+                            </h3>
+                            <div class="space-y-6">
+                                <div
+                                    class="group flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 bg-surface-container-low rounded-xl transition-all hover:bg-surface-container duration-300">
+                                    <div
+                                        class="w-16 h-16 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary">
+                                        <span class="material-symbols-outlined text-3xl">language</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-xl font-bold font-headline mb-1">Advanced Nuance &amp; Context
+                                        </h4>
+                                        <p class="text-on-surface-variant text-sm">Level C1 • Room 402 • 12/20 Students
+                                            Joined</p>
+                                    </div>
+                                    <button
+                                        class="w-full sm:w-auto px-6 py-2 bg-on-primary-fixed-variant text-white rounded-full text-sm font-bold">Join
+                                        Class</button>
+                                </div>
+                                <div
+                                    class="group flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 bg-surface-container-low rounded-xl transition-all hover:bg-surface-container duration-300">
+                                    <div
+                                        class="w-16 h-16 rounded-xl bg-white shadow-sm flex items-center justify-center text-tertiary">
+                                        <span class="material-symbols-outlined text-3xl">auto_stories</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="text-xl font-bold font-headline mb-1">Business English Ethics</h4>
+                                        <p class="text-on-surface-variant text-sm">Level B2 • Virtual Hall • 8/15
+                                            Students Joined</p>
+                                    </div>
+                                    <button
+                                        class="w-full sm:w-auto px-6 py-2 bg-on-primary-fixed-variant text-white rounded-full text-sm font-bold">Join
+                                        Class</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Classroom Analytics (Vitality) -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div class="bg-surface-container-high p-8 rounded-[2rem]">
+                                <h3 class="text-xl font-headline font-bold mb-4">Vitality Score</h3>
+                                <div class="flex items-end gap-2 mb-4">
+                                    <span class="text-5xl font-extrabold text-primary">94%</span>
+                                    <span class="text-secondary font-bold mb-1 flex items-center"><span
+                                            class="material-symbols-outlined text-sm">trending_up</span>+2%</span>
+                                </div>
+                                <p class="text-sm text-on-surface-variant leading-relaxed">Engagement is at an all-time
+                                    high this semester. Group discussions are driving participation.</p>
+                                <div class="mt-6 flex gap-2">
+                                    <div class="h-2 w-full bg-white rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary w-[94%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-surface-container-highest p-8 rounded-[2rem] flex flex-col justify-between">
+                                <div>
+                                    <h3 class="text-xl font-headline font-bold mb-2">Student Sentiment</h3>
+                                    <p class="text-sm text-on-surface-variant">Real-time feedback analysis</p>
+                                </div>
+                                <div class="flex justify-between items-center mt-6">
+                                    <div class="flex -space-x-3">
+                                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                                            data-alt="Student profile portrait"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-7HHsIqNWadJjO4C-UYU8HRYEbP2f8TRT_HDApr_e4aPMpqDGSyN10EvLOsLjXceZrUiKPSTMtTxXBtnlqMd8xXvmaSmS1WPYU7dYYsbxPKgYfeqSna-oPV-Ea5SkmYfhdn2_G5kU2_djTkR3C61OPuf63DYvR6N_jgNRbrp5gGQt24j6BhcchwqgNdyHX6JRigYqIX9RQDuxFcWThHZCU2Oh6gk051gMNXmHMLaO6FoEqQpwr2Nzt7Ao923KWVQE9vtUqSCClM8u" />
+                                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                                            data-alt="Student profile portrait"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdZB9uQLiP6CgzW9BJr9jgFoczD9JcXQgEGPD-6M9S9hYSZphVfO0DkKzvlR9pshsJeRjQlodyP01WCQnjjjjss4o1HRjpzfcNFMKqQFmnljkptBVEblXYhqC_hAwLJDy-sWgi4NDqPm5cbEDvxWZ5jE6pCa_bYrMXVtT-eAzyvA_FPjWzO5O2uc-FFDcJidbuHhEyfscIZM8spUPQlhOR6p2Zr8KGeYAHbvVL2lWGA6rIDGW-3M3kaZKlK24zcIfXRpg6EsSsp-RA" />
+                                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                                            data-alt="Student profile portrait"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlxMphFm6e0cEOmeY0b4YuWSvAn_g_3_SWjOZ9lbVCxg9xcXqtmK-BYtCRayNe4EZ9EzjRQBGQJesbzi-u5s8IwTvv2O5M3kiIfCf6qirw6VmOAFk_2mNO5FNiHkdsVYli1V9ZBzJAfBJvv_Yion39yFTjetXYhDuIBVOLQ9SjmKTfche7__lGEP2ecZpk9tef9g8GTggbYCJJ1CgO1Sfj9HaR_xmw1QFXxrybMMSj-v_qNOTnJWhdA14EIoRCz2XQg_EYl0zTMSJB" />
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-white border-2 border-white flex items-center justify-center text-[10px] font-bold">
+                                            +12</div>
+                                    </div>
+                                    <span class="px-4 py-2 bg-white rounded-full text-xs font-bold shadow-sm">Positive
+                                        Echo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Sidebar Content -->
+                    <aside class="md:col-span-4 space-y-8">
+                        <!-- Grading Queue -->
+                        <div class="bg-surface-container-low p-8 rounded-[2rem] border border-outline-variant/15">
+                            <h3 class="text-xl font-headline font-bold mb-6 flex items-center justify-between">
+                                Grading Queue
+                                <span
+                                    class="bg-error-container text-on-error-container px-3 py-1 rounded-full text-[10px] font-black uppercase">8
+                                    Urgent</span>
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="p-4 bg-white rounded-2xl shadow-sm border-l-4 border-error">
+                                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter mb-1">
+                                        Essay Submission</p>
+                                    <h5 class="font-bold text-on-surface">The Industrial Revolution</h5>
+                                    <p class="text-xs text-on-surface-variant">Student: Marco Rossi • Due 2h ago</p>
+                                </div>
+                                <div class="p-4 bg-white rounded-2xl shadow-sm border-l-4 border-primary">
+                                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter mb-1">
+                                        Vocabulary Quiz</p>
+                                    <h5 class="font-bold text-on-surface">Medical Terminology Unit</h5>
+                                    <p class="text-xs text-on-surface-variant">24 Submissions • Due Tomorrow</p>
+                                </div>
+                                <button
+                                    class="w-full py-4 text-primary font-bold text-sm hover:underline decoration-2 underline-offset-4">View
+                                    All Tasks</button>
+                            </div>
+                        </div>
+                        <!-- Word of the Day -->
+                        <div class="glass-panel p-8 rounded-[2rem] shadow-sm border border-tertiary-container/30">
+                            <div class="flex items-center gap-2 mb-6">
+                                <span class="material-symbols-outlined text-tertiary">diamond</span>
+                                <h3 class="text-lg font-headline font-bold text-on-tertiary-container">Word of the Day
+                                </h3>
+                            </div>
+                            <div class="mb-6">
+                                <h2 class="text-4xl font-headline font-extrabold text-tertiary mb-1">Ephemeral</h2>
+                                <p class="text-xs font-medium text-on-tertiary-fixed-variant italic">/əˈfem(ə)rəl/ •
+                                    adjective</p>
+                            </div>
+                            <div class="bg-tertiary-container/50 p-4 rounded-xl mb-4">
+                                <p class="text-sm font-medium text-on-tertiary-container">"Lasting for a very short
+                                    time."</p>
+                            </div>
+                            <p class="text-xs text-on-tertiary-fixed-variant leading-relaxed">
+                                <span class="font-bold">Usage:</span> "The professor noted that the students' initial
+                                confusion was ephemeral, quickly replaced by clarity."
+                            </p>
+                        </div>
+                        <!-- Academy Bulletin (Short News) -->
+                        <div class="p-8 bg-on-surface text-surface rounded-[2rem]">
+                            <h3 class="text-lg font-headline font-bold mb-4">Academy Updates</h3>
+                            <ul class="space-y-4">
+                                <li class="flex gap-4">
+                                    <span class="text-primary font-black">01</span>
+                                    <p class="text-sm text-surface-variant">Winter term elective choices close this
+                                        Friday at 5 PM.</p>
+                                </li>
+                                <li class="flex gap-4">
+                                    <span class="text-primary font-black">02</span>
+                                    <p class="text-sm text-surface-variant">New audio-lab headsets are now available for
+                                        faculty checkout.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+                <!-- Featured Lesson Section (Asymmetric) -->
+                <section class="mt-16 mb-24">
+                    <div
+                        class="bg-white rounded-tl-[4rem] rounded-br-[4rem] rounded-tr-xl rounded-bl-xl p-12 lg:p-16 flex flex-col lg:flex-row gap-12 items-center shadow-sm relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none"
+                            data-alt="Subtle dot pattern texture"
+                            style="background-image: radial-gradient(#006e27 1px, transparent 1px); background-size: 20px 20px;">
+                        </div>
+                        <div class="lg:w-1/2">
+                            <span
+                                class="px-4 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-xs font-bold mb-6 inline-block">Featured
+                                Pedagogy</span>
+                            <h2
+                                class="text-4xl lg:text-5xl font-headline font-extrabold text-on-surface mb-6 leading-tight">
+                                Mastering The Socratic Method in Virtual Space</h2>
+                            <p class="text-lg text-on-surface-variant mb-8 leading-relaxed">Discover how to bridge the
+                                digital gap and foster critical thinking during remote sessions with our latest workshop
+                                guide for ESL educators.</p>
+                            <div class="flex gap-4">
+                                <button
+                                    class="px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:shadow-primary/20 transition-all">Download
+                                    Guide</button>
+                                <button
+                                    class="px-8 py-4 bg-surface-container-highest text-on-surface font-bold rounded-xl">Watch
+                                    Seminar</button>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 relative">
+                            <div
+                                class="aspect-video rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="High-end modern university lecture hall"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeMFmfD7MIUO098b101imwGtiL8innxleY3KIWdwNoaxXJWZAP2Yxlpk18S4vX9tkcgB2pAZsrfpEg8aybMqV9TWkQOv_Vvced3e8E_2YvnmZdos98bw7Ig13rol1akcg0LRTssfBxafq-HKejf5AGLp9DLN4OsDg4b1k31fONBYY_UZcwZU_B6_eEHDUt27wZupPzbzauoz6yOCXCsjN_1-7VUPvNJ9wbW-hkaYNnIk9KpgI-SNA7XGxY1fOqgpDfZtCLKpGxWu0k" />
+                            </div>
+                            <div
+                                class="absolute -bottom-6 -left-6 bg-secondary text-white p-6 rounded-2xl shadow-xl -rotate-3">
+                                <span class="text-3xl font-black block">4.9/5</span>
+                                <span class="text-[10px] uppercase font-bold tracking-widest opacity-80">Faculty
+                                    Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <!-- Mobile Bottom Nav -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full glass-panel border-t border-outline-variant/30 px-6 py-3 flex justify-between items-center z-50">
+        <a class="flex flex-col items-center gap-1 text-primary" href="#">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+            <span class="text-[10px] font-bold uppercase">Home</span>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+            <span class="material-symbols-outlined">menu_book</span>
+            <span class="text-[10px] font-bold uppercase">Lessons</span>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+            <span class="material-symbols-outlined">grade</span>
+            <span class="text-[10px] font-bold uppercase">Grades</span>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-[10px] font-bold uppercase">Students</span>
+        </a>
+    </nav>
+    <!-- FAB -->
+    <button
+        class="fixed bottom-24 right-8 md:bottom-12 md:right-12 w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform z-40 group">
+        <span class="material-symbols-outlined text-3xl">chat_bubble</span>
+        <span
+            class="absolute right-full mr-4 px-4 py-2 bg-on-surface text-surface text-xs font-bold rounded-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Support
+            Desk</span>
+    </button>
 </body>
+
 </html>
