@@ -1,0 +1,442 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#02732a",
+                        "on-tertiary-fixed-variant": "#5b430c",
+                        "on-background": "#141e14",
+                        "background": "#f1fdec",
+                        "on-secondary-fixed": "#002107",
+                        "on-surface-variant": "#3b4b3a",
+                        "outline": "#6b7b69",
+                        "on-tertiary-fixed": "#271900",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#6bff83",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#97f89e",
+                        "surface-container-highest": "#dae6d6",
+                        "surface-container": "#e6f1e1",
+                        "on-primary-fixed": "#002107",
+                        "outline-variant": "#bacbb6",
+                        "on-tertiary-container": "#795d26",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#e9f4e4",
+                        "surface-container-low": "#ecf7e6",
+                        "tertiary": "#755a23",
+                        "secondary-container": "#95f59b",
+                        "surface-container-high": "#e0ecdb",
+                        "secondary": "#006e27",
+                        "surface": "#f1fdec",
+                        "on-surface": "#141e14",
+                        "surface-tint": "#006e27",
+                        "primary": "#006e27",
+                        "tertiary-fixed-dim": "#e6c180",
+                        "primary-container": "#2eff6c",
+                        "on-primary-container": "#007229",
+                        "on-secondary-fixed-variant": "#00531c",
+                        "primary-fixed-dim": "#00e55b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(24px);
+        }
+    </style>
+    {% tailwind_css %}
+</head>
+
+<body class="bg-background font-body text-on-surface antialiased">
+    <!-- SideNavBar (Authority Source: JSON) -->
+    <aside
+        class="h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-950 flex flex-col py-8 px-4 font-['Plus_Jakarta_Sans'] font-medium no-line bg-slate-100 dark:bg-slate-900 shadow-none z-40">
+        <div class="mb-10 px-4">
+            <h1 class="text-xl font-black font-['Manrope'] text-blue-900 dark:text-blue-100">Lumina Academy</h1>
+            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold mt-1">The Scholarly Sanctuary</p>
+        </div>
+        <nav class="flex-1 space-y-2">
+            <!-- Lessons -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform duration-200"
+                href="#">
+                <span class="material-symbols-outlined">menu_book</span>
+                <span>Lessons</span>
+            </a>
+            <!-- Grades (ACTIVE) -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-emerald-700 dark:text-emerald-300 font-bold border-r-4 border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20 hover:translate-x-1 transition-transform duration-200"
+                href="#">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grade</span>
+                <span>Grades</span>
+            </a>
+            <!-- Students -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform duration-200"
+                href="#">
+                <span class="material-symbols-outlined">group</span>
+                <span>Students</span>
+            </a>
+            <!-- Settings -->
+            <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform duration-200"
+                href="#">
+                <span class="material-symbols-outlined">settings</span>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="mt-auto px-4 pt-4 border-t border-outline-variant/10 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+                <img alt="Teacher Profile"
+                    data-alt="professional portrait of a confident educator in a brightly lit academic office setting with books in background"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2cs7CWppeQ7CKvJeJx2jpm1PHDlKwBCepfF9AGYyBeLIlgIrstmMeLH6AE7kn9pFkzsoc--uIC_vl5lFOZ3XPvU2FPFJ5zhh5k89-TtZ452iHisQCh3T-9-dUGkOrPTXxRWLZmzh93FJse9FmmsPkBvxGid50U2CoXk2qHCMY7rYdsoc_UPMdd_U_Dw2jBjqHhylBrbfLwRD1psy4u-bSGp3T-FX1Ku_XrL2jSISAaVInLZV-l8aQkydUh-sgLWcXRWY9vu-4Ykaf" />
+            </div>
+            <div>
+                <p class="text-sm font-bold">Prof. Elena</p>
+                <p class="text-xs text-slate-500">Linguistics Dept.</p>
+            </div>
+        </div>
+    </aside>
+    <!-- Main Canvas -->
+    <main class="ml-64 min-h-screen p-12 lg:p-16">
+        <!-- Header Section (Intentional Asymmetry) -->
+        <header class="mb-16 flex flex-col md:flex-row justify-between items-start gap-8">
+            <div class="max-w-2xl">
+                <h2 class="font-headline text-6xl font-extrabold tracking-tighter text-on-surface mb-4 leading-none">
+                    Student Performance <span class="text-primary">&amp;</span> Grades
+                </h2>
+                <p class="font-body text-lg text-on-surface-variant max-w-lg">
+                    A panoramic view of linguistic progress across your Advanced English C1 cohort. Refine your
+                    curriculum through data-driven insights.
+                </p>
+            </div>
+            <!-- Quick Filters (No-Line Rule) -->
+            <div class="flex gap-4 p-2 bg-surface-container-low rounded-xl">
+                <button
+                    class="px-6 py-3 bg-surface-container-lowest rounded-lg font-bold shadow-sm text-primary transition-all active:scale-95">
+                    Class A-102
+                </button>
+                <button class="px-6 py-3 text-on-surface-variant hover:text-primary transition-colors">
+                    Class B-204
+                </button>
+                <button class="px-6 py-3 text-on-surface-variant hover:text-primary transition-colors">
+                    Masters Seminar
+                </button>
+            </div>
+        </header>
+        <!-- Bento Grid Layout -->
+        <div class="grid grid-cols-12 gap-8 items-start">
+            <!-- Performance Chart Card (Editorial Style) -->
+            <div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+                <div class="flex justify-between items-end mb-10">
+                    <div>
+                        <p class="text-sm uppercase tracking-widest text-outline mb-1">Class Average Mastery</p>
+                        <h3 class="text-3xl font-headline font-bold">Progress Trajectory</h3>
+                    </div>
+                    <div class="flex gap-2">
+                        <span
+                            class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed rounded-full text-xs font-bold">Grammar</span>
+                        <span
+                            class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-xs font-bold">Vocabulary</span>
+                    </div>
+                </div>
+                <!-- Visual Data Representation -->
+                <div class="h-64 flex items-end justify-between gap-4 px-4">
+                    <div class="w-full bg-surface-container rounded-t-xl relative group h-[45%]">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-white text-xs py-1 px-2 rounded">
+                            45%</div>
+                        <div class="absolute inset-0 bg-primary/20 rounded-t-xl"></div>
+                    </div>
+                    <div class="w-full bg-surface-container rounded-t-xl relative group h-[62%]">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-white text-xs py-1 px-2 rounded">
+                            62%</div>
+                        <div class="absolute inset-0 bg-primary/40 rounded-t-xl"></div>
+                    </div>
+                    <div class="w-full bg-surface-container rounded-t-xl relative group h-[88%]">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-white text-xs py-1 px-2 rounded">
+                            88%</div>
+                        <div class="absolute inset-0 bg-primary/60 rounded-t-xl"></div>
+                    </div>
+                    <div class="w-full bg-surface-container rounded-t-xl relative group h-[74%]">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-white text-xs py-1 px-2 rounded">
+                            74%</div>
+                        <div class="absolute inset-0 bg-primary/80 rounded-t-xl"></div>
+                    </div>
+                    <div class="w-full bg-surface-container rounded-t-xl relative group h-[92%]">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-white text-xs py-1 px-2 rounded">
+                            92%</div>
+                        <div class="absolute inset-0 bg-primary rounded-t-xl shadow-[0_-8px_16px_rgba(46,255,108,0.2)]">
+                        </div>
+                    </div>
+                    <div class="w-full bg-surface-container rounded-t-xl relative group h-[68%]">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-white text-xs py-1 px-2 rounded">
+                            68%</div>
+                        <div class="absolute inset-0 bg-primary/50 rounded-t-xl"></div>
+                    </div>
+                </div>
+                <div class="flex justify-between mt-6 text-xs text-outline font-bold uppercase tracking-wider px-4">
+                    <span>Week 1</span>
+                    <span>Week 2</span>
+                    <span>Week 3</span>
+                    <span>Week 4</span>
+                    <span>Week 5</span>
+                    <span>Current</span>
+                </div>
+            </div>
+            <!-- Recent Submissions Queue (Glassmorphism Modal-like feel) -->
+            <div class="col-span-12 lg:col-span-4 space-y-6">
+                <div class="bg-surface-container-low/50 backdrop-blur-xl p-8 rounded-xl">
+                    <h4 class="font-headline font-bold text-xl mb-6">Action Queue</h4>
+                    <div class="space-y-4">
+                        <!-- Submission Item -->
+                        <div
+                            class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl shadow-sm hover:scale-[1.02] transition-transform cursor-pointer">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">description</span>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-bold">Julianne V. • Essay</p>
+                                <p class="text-xs text-on-surface-variant">Metaphor Analysis</p>
+                            </div>
+                            <span class="text-xs font-bold text-primary">NEW</span>
+                        </div>
+                        <!-- Submission Item -->
+                        <div
+                            class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl shadow-sm hover:scale-[1.02] transition-transform cursor-pointer">
+                            <div
+                                class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+                                <span class="material-symbols-outlined">mic</span>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-bold">Marco S. • Speaking</p>
+                                <p class="text-xs text-on-surface-variant">Phonetic Drill 04</p>
+                            </div>
+                            <span class="text-xs font-bold text-outline">2h ago</span>
+                        </div>
+                        <!-- Submission Item -->
+                        <div
+                            class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl shadow-sm hover:scale-[1.02] transition-transform cursor-pointer opacity-80">
+                            <div
+                                class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+                                <span class="material-symbols-outlined">quiz</span>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-bold">Liam W. • Quiz</p>
+                                <p class="text-xs text-on-surface-variant">Irregular Verbs</p>
+                            </div>
+                            <span class="text-xs font-bold text-outline">5h ago</span>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-6 py-4 border-2 border-dashed border-outline-variant rounded-xl text-sm font-bold text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
+                        View Grading Dashboard
+                    </button>
+                </div>
+            </div>
+            <!-- Grade Ledger (The Asymmetric Table Replacement) -->
+            <section class="col-span-12 mt-8">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-4xl font-headline font-extrabold tracking-tight">Student Ledger</h3>
+                    <div class="flex gap-4">
+                        <div class="relative">
+                            <span
+                                class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+                            <input
+                                class="pl-12 pr-6 py-3 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 w-64 text-sm"
+                                placeholder="Search student..." type="text" />
+                        </div>
+                        <button
+                            class="p-3 bg-surface-container-low text-on-surface rounded-xl hover:bg-surface-container-high transition-colors">
+                            <span class="material-symbols-outlined">tune</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <!-- Student Row (Asymmetric Card Style) -->
+                    <div
+                        class="grid grid-cols-12 items-center bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+                        <div class="col-span-4 flex items-center gap-6">
+                            <div
+                                class="w-14 h-14 rounded-xl rotate-3 group-hover:rotate-0 transition-transform overflow-hidden bg-surface-container shadow-inner">
+                                <img alt="Student"
+                                    data-alt="close-up portrait of a young man with glasses smiling in a bright natural light studio setting"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo7VNx5KF7YTPYZPedd9GpO6v2W8u889NDxaQVLOA4XrpJXR4oraSG2jU1IkhsCZsRWq5P6f51WDNrCqkvXDYPxOC4jjsdZH4DiDVkkGIJFba59NPwrLCgucmKYTKRDpQ76oCVDWCzlvVfOWOzwry5whofx6qQtolCJofvue9JECf745Lt4L7Do2zyfIoMuaBkNT31ZBXlPeRYbXYmIEfaDe9CLRgJuuKysyv8CDTcJI5Ht44KuPMQp_boSIye7al3eolof0fzVSRD" />
+                            </div>
+                            <div>
+                                <h5 class="text-lg font-bold font-headline">Arthur Pendragon</h5>
+                                <p class="text-xs text-outline tracking-wider uppercase font-bold">Student ID: #88219
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-xs text-outline mb-1">Grammar</p>
+                            <span
+                                class="px-3 py-1 bg-primary-container/20 text-on-primary-container rounded-full text-sm font-black">94%</span>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-xs text-outline mb-1">Vocabulary</p>
+                            <span
+                                class="px-3 py-1 bg-secondary-container/20 text-on-secondary-container rounded-full text-sm font-black">88%</span>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-xs text-outline mb-1">Speaking</p>
+                            <span
+                                class="px-3 py-1 bg-tertiary-container/20 text-on-tertiary-container rounded-full text-sm font-black">91%</span>
+                        </div>
+                        <div class="col-span-2 flex justify-end gap-2">
+                            <button class="p-2 text-outline hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">bar_chart_4_bars</span>
+                            </button>
+                            <button class="p-2 text-outline hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">edit</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Student Row -->
+                    <div
+                        class="grid grid-cols-12 items-center bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+                        <div class="col-span-4 flex items-center gap-6">
+                            <div
+                                class="w-14 h-14 rounded-xl -rotate-3 group-hover:rotate-0 transition-transform overflow-hidden bg-surface-container shadow-inner">
+                                <img alt="Student"
+                                    data-alt="headshot of a serious young woman with curly hair against a soft beige background in high resolution"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLllSPli4PIWDjjrWhIa1vdIVR02W1bZ3Lec5hoZf48D5WoKtUj4jKjyV2l22BTFfpLCj9Tgx3q9hpApiEXFfw4zmKaMcj2owlvQSDYCV0imUidL17l7Fr7IkHY9hOxD92urs43q58bTVo8aeyS-M_wKReN1UzKunKy8Mf3DhsfSyWKP1-jEdWY80-TkbNZrc-nwKponE2tku8ixTu5R91Px8tpehTh19I2HD1kRJ0WpCFchGbMX7FZgK3ObfOg9EYiEGdVgzscoMS" />
+                            </div>
+                            <div>
+                                <h5 class="text-lg font-bold font-headline">Isabella Rossi</h5>
+                                <p class="text-xs text-outline tracking-wider uppercase font-bold">Student ID: #88224
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-xs text-outline mb-1">Grammar</p>
+                            <span
+                                class="px-3 py-1 bg-primary-container/20 text-on-primary-container rounded-full text-sm font-black">76%</span>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-xs text-outline mb-1">Vocabulary</p>
+                            <span
+                                class="px-3 py-1 bg-secondary-container/20 text-on-secondary-container rounded-full text-sm font-black">92%</span>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-xs text-outline mb-1">Speaking</p>
+                            <span
+                                class="px-3 py-1 bg-tertiary-container/20 text-on-tertiary-container rounded-full text-sm font-black">84%</span>
+                        </div>
+                        <div class="col-span-2 flex justify-end gap-2">
+                            <button class="p-2 text-outline hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">bar_chart_4_bars</span>
+                            </button>
+                            <button class="p-2 text-outline hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">edit</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Student Row -->
+                    <div
+                        class="grid grid-cols-12 items-center bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+                        <div class="col-span-4 flex items-center gap-6">
+                            <div
+                                class="w-14 h-14 rounded-xl rotate-2 group-hover:rotate-0 transition-transform overflow-hidden bg-surface-container shadow-inner">
+                                <img alt="Student"
+                                    data-alt="vibrant portrait of a smiling young man in a modern casual shirt with clean studio lighting"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlIrBR_O9xSMF-XLa0pcT2_bC9CESvQOWVEIVluEc5j6O75YLcMSgoLIiopqo_N609lFEpkAAvduASyV3y7lSDRuNwJzORZ1ImnquDGLoi5WaQHSubryoRA3lgmNoiRq-e9XIHXHoGBybnS-v89uehBQE76GTGTxonyKzm9C7leRujdg88TUyJPfrgWETRdD2NE_EOAOlnUtc5BIOzatYB9Cmv3paKAWkWyWaeCkEfks2G8VjHLbib1GzHHRIlXCFB5Ja0Nu2ErRoH" />
+                            </div>
+                            <div>
+                                <h5 class="text-lg font-bold font-headline">Mateo Alvarez</h5>
+                                <p class="text-xs text-outline tracking-wider uppercase font-bold">Student ID: #88301
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-xs text-outline mb-1">Grammar</p>
+                            <span
+                                class="px-3 py-1 bg-primary-container/20 text-on-primary-container rounded-full text-sm font-black">89%</span>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-xs text-outline mb-1">Vocabulary</p>
+                            <span
+                                class="px-3 py-1 bg-secondary-container/20 text-on-secondary-container rounded-full text-sm font-black">81%</span>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-xs text-outline mb-1">Speaking</p>
+                            <span
+                                class="px-3 py-1 bg-tertiary-container/20 text-on-tertiary-container rounded-full text-sm font-black">95%</span>
+                        </div>
+                        <div class="col-span-2 flex justify-end gap-2">
+                            <button class="p-2 text-outline hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">bar_chart_4_bars</span>
+                            </button>
+                            <button class="p-2 text-outline hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">edit</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination/Load More (No Line Rule) -->
+                <div class="mt-12 flex justify-center">
+                    <button
+                        class="flex items-center gap-2 px-10 py-4 bg-surface-container-high rounded-full font-bold text-on-surface hover:bg-primary hover:text-white transition-all transform active:scale-95 group">
+                        <span>Reveal More Students</span>
+                        <span
+                            class="material-symbols-outlined group-hover:translate-y-1 transition-transform">expand_more</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+        <!-- Footer / Credits -->
+        <footer
+            class="mt-24 pt-12 border-t border-outline-variant/10 text-center text-outline text-xs tracking-widest uppercase font-bold">
+            © Lumina Academy — Linguistic Excellence Portal
+        </footer>
+    </main>
+    <!-- FAB for Grading (Contextual) -->
+    <button
+        class="fixed bottom-12 right-12 w-16 h-16 bg-gradient-to-br from-primary to-primary-container text-on-primary-container rounded-xl shadow-[0_16px_32px_rgba(46,255,108,0.3)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+        <span class="material-symbols-outlined !text-3xl">add_chart</span>
+    </button>
+</body>
+
+</html>

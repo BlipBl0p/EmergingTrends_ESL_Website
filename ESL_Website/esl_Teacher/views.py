@@ -17,3 +17,8 @@ def t_studentlist(request):
     if request.user.is_authenticated:
         return render(request, 'pages/teacher_studentlist.html')
     return redirect('/login')
+
+def t_grades(request):
+    if request.user.is_authenticated:
+        return render(request, 'pages/teacher_grades.html')
+    return redirect('/login')
