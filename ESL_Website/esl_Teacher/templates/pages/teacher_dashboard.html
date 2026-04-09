@@ -100,18 +100,49 @@
     <div class="flex min-h-screen">
         <!-- SideNavBar -->
         <aside
-            class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-slate-50 dark:bg-slate-950 border-r border-slate-100 dark:border-slate-800 z-40 hidden lg:flex">
-            <div class="flex flex-col gap-2 p-6 h-full">
+            class="h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-950 flex flex-col py-8 px-4 font-['Plus_Jakarta_Sans'] font-medium no-line bg-slate-100 dark:bg-slate-900 shadow-none z-40">
+        <div class="flex items-center gap-3 mb-8 pt-4">
+            <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold text-primary dark:text-blue-300 font-headline">Lumina Admin</h2>
+                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">ESL Faculty</p>
+            </div>
+        </div>
+        <nav class="flex-1 space-y-2">
+            <a class="flex items-center gap-3 px-4 py-3 text-emerald-700 dark:text-emerald-300 font-bold border-r-4 border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl hover:translate-x-1 transition-transform duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                <span>Lessons</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-1 transition-transform duration-200"
+                href="../grades/">
+                <span class="material-symbols-outlined" data-icon="grade">grade</span>
+                <span>Grades</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-1 transition-transform duration-200"
+                href="../students/">
+                <span class="material-symbols-outlined" data-icon="group">group</span>
+                <span>Students</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-1 transition-transform duration-200"
+                href="/logout/">
+                <span class="material-symbols-outlined" data-icon="group">logout</span>
+                <span>Logout</span>
+            </a>
+        </nav>
+            <!-- <div class="flex flex-col gap-2 p-6 h-full">
                 <div class="flex items-center gap-3 mb-8 pt-4">
                     <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg">
                         <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
                     </div>
                     <div>
-                        <h2 class="text-xl font-bold text-blue-800 dark:text-blue-300 font-headline">Lumina Admin</h2>
+                        <h2 class="text-xl font-bold text-primary dark:text-blue-300 font-headline">Lumina Admin</h2>
                         <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">ESL Faculty</p>
                     </div>
                 </div>
-                <nav class="space-y-2 font-plus-jakarta text-sm font-semibold">
+                <nav class="space-y-2 flex-1">
                     <a class="flex items-center gap-3 px-4 py-3 text-blue-700 dark:text-blue-400 bg-white dark:bg-slate-900 rounded-xl shadow-sm transition-all duration-300"
                         href="../dashboard/">
                         <span class="material-symbols-outlined">menu_book</span>
@@ -140,7 +171,7 @@
                         <span class="text-sm font-bold text-secondary">Active Now</span>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </aside>
         <!-- Main Content -->
         <main class="flex-1 lg:ml-64 p-8 lg:p-12">
@@ -156,7 +187,7 @@
                     </div>
                     <div class="flex gap-4">
                         <button
-                            class="px-6 py-3 bg-gradient-to-b from-primary to-primary-container text-white font-bold rounded-xl shadow-md hover:opacity-90 transition-opacity flex items-center gap-2">
+                            class="px-6 py-3 bg-primary from-primary to-primary-container text-white font-bold rounded-xl shadow-md hover:opacity-90 transition-opacity flex items-center gap-2">
                             <span class="material-symbols-outlined">add</span>
                             New Lesson Plan
                         </button>
@@ -320,49 +351,6 @@
                         </div>
                     </aside>
                 </div>
-                <!-- Featured Lesson Section (Asymmetric) -->
-                <section class="mt-16 mb-24">
-                    <div
-                        class="bg-white rounded-tl-[4rem] rounded-br-[4rem] rounded-tr-xl rounded-bl-xl p-12 lg:p-16 flex flex-col lg:flex-row gap-12 items-center shadow-sm relative overflow-hidden">
-                        <div class="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none"
-                            data-alt="Subtle dot pattern texture"
-                            style="background-image: radial-gradient(#006e27 1px, transparent 1px); background-size: 20px 20px;">
-                        </div>
-                        <div class="lg:w-1/2">
-                            <span
-                                class="px-4 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-xs font-bold mb-6 inline-block">Featured
-                                Pedagogy</span>
-                            <h2
-                                class="text-4xl lg:text-5xl font-headline font-extrabold text-on-surface mb-6 leading-tight">
-                                Mastering The Socratic Method in Virtual Space</h2>
-                            <p class="text-lg text-on-surface-variant mb-8 leading-relaxed">Discover how to bridge the
-                                digital gap and foster critical thinking during remote sessions with our latest workshop
-                                guide for ESL educators.</p>
-                            <div class="flex gap-4">
-                                <button
-                                    class="px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:shadow-primary/20 transition-all">Download
-                                    Guide</button>
-                                <button
-                                    class="px-8 py-4 bg-surface-container-highest text-on-surface font-bold rounded-xl">Watch
-                                    Seminar</button>
-                            </div>
-                        </div>
-                        <div class="lg:w-1/2 relative">
-                            <div
-                                class="aspect-video rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
-                                <img class="w-full h-full object-cover"
-                                    data-alt="High-end modern university lecture hall"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeMFmfD7MIUO098b101imwGtiL8innxleY3KIWdwNoaxXJWZAP2Yxlpk18S4vX9tkcgB2pAZsrfpEg8aybMqV9TWkQOv_Vvced3e8E_2YvnmZdos98bw7Ig13rol1akcg0LRTssfBxafq-HKejf5AGLp9DLN4OsDg4b1k31fONBYY_UZcwZU_B6_eEHDUt27wZupPzbzauoz6yOCXCsjN_1-7VUPvNJ9wbW-hkaYNnIk9KpgI-SNA7XGxY1fOqgpDfZtCLKpGxWu0k" />
-                            </div>
-                            <div
-                                class="absolute -bottom-6 -left-6 bg-secondary text-white p-6 rounded-2xl shadow-xl -rotate-3">
-                                <span class="text-3xl font-black block">4.9/5</span>
-                                <span class="text-[10px] uppercase font-bold tracking-widest opacity-80">Faculty
-                                    Rating</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
         </main>
     </div>
