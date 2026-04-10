@@ -22,3 +22,8 @@ def t_grades(request):
     if request.user.is_authenticated:
         return render(request, 'pages/teacher_grades.html')
     return redirect('/login')
+
+def t_modules(request):
+    if request.user.is_authenticated:
+        return render(request, 'pages/teacher_module.html')
+    return redirect('/login')
