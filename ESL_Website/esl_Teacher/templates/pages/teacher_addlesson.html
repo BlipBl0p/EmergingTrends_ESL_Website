@@ -1,0 +1,316 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Create New Lesson | Lumina Academy</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#006e27",
+                        "on-primary-container": "#007229",
+                        "on-secondary-fixed": "#002107",
+                        "inverse-primary": "#00e55b",
+                        "on-surface-variant": "#3b4b3a",
+                        "on-secondary-container": "#02732a",
+                        "on-primary-fixed-variant": "#00531c",
+                        "on-background": "#141e14",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#002107",
+                        "surface-dim": "#d2ddcd",
+                        "surface-bright": "#f1fdec",
+                        "surface": "#f1fdec",
+                        "primary": "#006e27",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#ecf7e6",
+                        "surface-container": "#e6f1e1",
+                        "primary-container": "#2eff6c",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#6bff83",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#dae6d6",
+                        "tertiary-fixed-dim": "#e6c180",
+                        "secondary-fixed-dim": "#7cdb84",
+                        "on-tertiary-container": "#795d26",
+                        "tertiary-container": "#ffd995",
+                        "on-tertiary-fixed": "#271900",
+                        "tertiary-fixed": "#ffdea5",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#6b7b69",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#bacbb6",
+                        "secondary-container": "#95f59b",
+                        "background": "#f1fdec",
+                        "inverse-surface": "#293328",
+                        "primary-fixed-dim": "#00e55b",
+                        "on-surface": "#141e14",
+                        "tertiary": "#755a23",
+                        "on-tertiary-fixed-variant": "#5b430c",
+                        "surface-variant": "#dae6d6",
+                        "surface-tint": "#006e27",
+                        "surface-container-high": "#e0ecdb",
+                        "on-secondary-fixed-variant": "#00531c",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#97f89e",
+                        "inverse-on-surface": "#e9f4e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .font-manrope {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+    {% tailwind_css %}
+</head>
+
+<body class="bg-background text-on-surface">
+    <!-- SideNavBar Shell -->
+        <aside
+            class="h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-950 flex flex-col py-8 px-4 font-['Plus_Jakarta_Sans'] font-medium no-line bg-slate-100 dark:bg-slate-900 shadow-none z-40">
+        <div class="flex items-center gap-3 mb-8 pt-4">
+            <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold text-primary dark:text-blue-300 font-headline">Lumina Admin</h2>
+                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">ESL Faculty</p>
+            </div>
+        </div>
+        <nav class="flex-1 space-y-2">
+            <a class="flex items-center gap-3 px-4 py-3 text-emerald-700 dark:text-emerald-300 font-bold border-r-4 border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl hover:translate-x-1 transition-transform duration-200"
+                href="../../">
+                <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                <span>Lessons</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-1 transition-transform duration-200"
+                href="../../../grades/">
+                <span class="material-symbols-outlined" data-icon="grade">grade</span>
+                <span>Grades</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-1 transition-transform duration-200"
+                href="../../../students/">
+                <span class="material-symbols-outlined" data-icon="group">group</span>
+                <span>Students</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl hover:translate-x-1 transition-transform duration-200"
+                href="/logout/">
+                <span class="material-symbols-outlined" data-icon="group">logout</span>
+                <span>Logout</span>
+            </a>
+        </nav>
+        </aside>
+    <!-- TopNavBar Shell -->
+    <header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 glass-nav flex justify-between items-center px-8 z-40">
+        <div class="flex items-center bg-slate-50 dark:bg-slate-900 rounded-xl px-4 py-1.5 w-96">
+            <span class="material-symbols-outlined text-slate-400 mr-2" data-icon="search">search</span>
+            <input class="bg-transparent border-none focus:ring-0 text-sm w-full font-body"
+                placeholder="Search resources..." type="text" />
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="ml-64 pt-24 pb-16 px-12 min-h-screen">
+        <!-- Header Section -->
+        <div class="mb-12 max-w-5xl">
+            <h2 class="text-5xl font-extrabold font-manrope text-on-surface tracking-tighter leading-tight">Create New
+                Lesson</h2>
+            <p class="text-on-surface-variant mt-4 max-w-2xl text-lg leading-relaxed">
+                Craft a bespoke learning experience. Combine high-quality media with pedagogical rigor to inspire your
+                scholars.
+            </p>
+        </div>
+        <!-- Form Layout: Asymmetric Bento Grid -->
+        <div class="grid grid-cols-12 gap-8 max-w-6xl">
+            <!-- Left Column: Core Details -->
+            <div class="col-span-12 lg:col-span-7 space-y-8">
+                <!-- Basic Info Card -->
+                <div class="bg-surface-container-lowest rounded-[2rem] p-8 shadow-sm">
+                    <h3 class="text-xl font-bold font-manrope mb-8 text-on-surface">Lesson Architecture</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label
+                                class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 px-1">Lesson
+                                Title</label>
+                            <input
+                                class="w-full bg-surface-container-low border-none rounded-xl py-4 px-5 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-body text-lg"
+                                placeholder="e.g. Masterclass: The Art of the Narrative Arc" type="text" />
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 px-1">Description</label>
+                            <textarea
+                                class="w-full bg-surface-container-low border-none rounded-xl py-4 px-5 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-body"
+                                placeholder="Define the learning objectives and provide a brief overview of the scholarly content..."
+                                rows="5"></textarea>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-1">
+                                <label
+                                    class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 px-1">Duration
+                                    (min)</label>
+                                <div class="relative">
+                                    <span
+                                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
+                                        data-icon="schedule">schedule</span>
+                                    <input
+                                        class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-5 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-body"
+                                        placeholder="45" type="number" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Media Upload Section -->
+                <div class="bg-surface-container-low rounded-[2rem] p-8">
+                    <h3 class="text-xl font-bold font-manrope mb-6 text-on-surface">Curated Materials</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button
+                            class="bg-surface-container-lowest p-6 rounded-2xl flex flex-col items-center gap-3 border-2 border-dashed border-outline-variant hover:border-primary transition-all group">
+                            <span
+                                class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform"
+                                data-icon="video_library">video_library</span>
+                            <span class="font-bold text-sm text-on-surface-variant">Add Video</span>
+                        </button>
+                        <button
+                            class="bg-surface-container-lowest p-6 rounded-2xl flex flex-col items-center gap-3 border-2 border-dashed border-outline-variant hover:border-primary transition-all group">
+                            <span
+                                class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform"
+                                data-icon="audio_file">audio_file</span>
+                            <span class="font-bold text-sm text-on-surface-variant">Add Audio</span>
+                        </button>
+                        <button
+                            class="bg-surface-container-lowest p-6 rounded-2xl flex flex-col items-center gap-3 border-2 border-dashed border-outline-variant hover:border-primary transition-all group">
+                            <span
+                                class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform"
+                                data-icon="description">description</span>
+                            <span class="font-bold text-sm text-on-surface-variant">Upload PDF</span>
+                        </button>
+                        <button
+                            class="bg-surface-container-lowest p-6 rounded-2xl flex flex-col items-center gap-3 border-2 border-dashed border-outline-variant hover:border-primary transition-all group">
+                            <span
+                                class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform"
+                                data-icon="quiz">quiz</span>
+                            <span class="font-bold text-sm text-on-surface-variant">Create Quiz</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column: Taxonomy & Settings -->
+            <div class="col-span-12 lg:col-span-5 space-y-8">
+                <!-- Skill Tagging -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-sm">
+                    <h3 class="text-xl font-bold font-manrope mb-6 text-on-surface">Academic Skills</h3>
+                    <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Tag your lesson with primary focus
+                        areas for the student's mastery tracker.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <button
+                            class="px-5 py-2.5 rounded-full bg-secondary-container text-on-secondary-container font-bold text-sm hover:bg-primary hover:text-white transition-colors">Grammar</button>
+                        <button
+                            class="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-sm hover:bg-secondary-container transition-colors">Vocabulary</button>
+                        <button
+                            class="px-5 py-2.5 rounded-full bg-secondary-container text-on-secondary-container font-bold text-sm hover:bg-primary hover:text-white transition-colors">Speaking</button>
+                        <button
+                            class="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-sm hover:bg-secondary-container transition-colors">Listening</button>
+                        <button
+                            class="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-sm hover:bg-secondary-container transition-colors">Pronunciation</button>
+                        <button
+                            class="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-sm hover:bg-secondary-container transition-colors">Etymology</button>
+                        <button
+                            class="px-5 py-2.5 rounded-full bg-tertiary-container text-on-tertiary-container font-bold text-sm">
+                            <span class="material-symbols-outlined text-xs align-middle" data-icon="add">add</span> New
+                            Skill
+                        </button>
+                    </div>
+                </div>
+                <!-- Preview Image / Aesthetic Branding Card -->
+                <div class="relative group h-64 rounded-[2rem] overflow-hidden shadow-lg">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        data-alt="serene academic study space with high ceilings large windows sunlight hitting an oak table with old books and green plants"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDGl-Lk-KxhPXtmNtcS-k5e-blA6mZegs52n239floFAsmexIt2S-ZVNAp-jBwc2wkVZc4uhGmWb25eZ1fGLpfbpCKv3t1EFy0hPV1dmMDR6UtL1URAdh0MUIac8ppg0caS5i39AUtIjfaFp0C_PDSoaQoaYOwSgPYRB5t9SYDLYS5JlcVImviiQZLdSgcKvhg8TsIB_TOhEmW5rFx6iR6fAaYyXdrn5DPF1uaOWniYYYHSoVjgkoBJGLFSFTiH_2UHqCtq54ypsDF" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
+                        <span class="text-primary-container text-xs font-bold uppercase tracking-widest mb-2">Lesson
+                            Cover</span>
+                        <p class="text-white font-manrope font-bold text-lg">Curate the Visual Identity</p>
+                        <button
+                            class="mt-4 w-fit px-4 py-2 bg-white/20 backdrop-blur-md rounded-lg text-white text-xs font-bold hover:bg-white/30 transition-colors">Update
+                            Cover Photo</button>
+                    </div>
+                </div>
+                <!-- Sticky Action Bar -->
+                <div class="space-y-4">
+                    <button
+                        class="w-full py-5 rounded-xl bg-primary from-primary to-primary-container text-white font-bold text-lg shadow-lg active:scale-95 transition-all">
+                        Add to Module
+                    </button>
+                    <button
+                        class="w-full py-5 rounded-xl bg-surface-container-highest text-on-primary-fixed-variant font-bold text-lg hover:bg-surface-container-high transition-colors">
+                        Save as Draft
+                    </button>
+                    <button
+                        class="w-full flex items-center justify-center gap-2 py-3 text-error font-semibold hover:underline">
+                        <span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+                        Discard Draft
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Semantic Shell Footer -->
+        <footer
+            class="mt-24 border-t border-surface-container-highest pt-8 flex justify-between items-center text-on-surface-variant text-sm">
+            <div class="flex items-center gap-4">
+                <span class="font-manrope font-bold text-primary">The English Hub</span>
+            </div>
+            <div class="flex gap-6">
+                <a class="hover:text-primary transition-colors" href="#">Teaching Guides</a>
+                <a class="hover:text-primary transition-colors" href="#">Academic Integrity</a>
+                <a class="hover:text-primary transition-colors" href="#">Help Center</a>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>

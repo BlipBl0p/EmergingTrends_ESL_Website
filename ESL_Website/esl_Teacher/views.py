@@ -27,3 +27,13 @@ def t_modules(request):
     if request.user.is_authenticated:
         return render(request, 'pages/teacher_module.html')
     return redirect('/login')
+
+def t_addmodules(request):
+    if request.user.is_authenticated:
+        return render(request, 'pages/teacher_addmodule.html')
+    return redirect('/login')
+    
+def t_addlessons(request):
+    if request.user.is_authenticated:
+        return render(request, 'pages/teacher_addlesson.html')
+    return redirect('/login')

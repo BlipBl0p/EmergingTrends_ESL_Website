@@ -157,16 +157,6 @@
                         placeholder="Search lessons..." type="text" />
                     <span class="material-symbols-outlined absolute left-3 top-2 text-slate-400 text-lg">search</span>
                 </div>
-                <div class="flex items-center gap-4 text-slate-600">
-                    <button class="hover:text-blue-600 transition-opacity active:opacity-80">
-                        <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-                    </button>
-                    <button class="hover:text-blue-600 transition-opacity active:opacity-80">
-                        <span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
-                    </button>
-                    <img alt="Teacher Avatar" class="w-9 h-9 rounded-full"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjpGV25IyZlUfBPvaWBwnqmhiKqXZUQBGvFNz4IjjMIXNSwMB78tq-sUr0f26-97oiIjiO3KWv2L3HHCQ2AUqiwawhUDTS-Ux0fbiXjplaZ0VFuFau06aEHqhPqxOjmUxYdDpQea5anupXwD4XO-8CWHgAKrtmORZ-G60Nplbqq1nmSDCry6tXXkle6X77umK_pP3x4s2HOgFimg_F2poqiKuRn-BdlE8ReXkseeoSOtNjhyw65EOky1Cy5vFxtaE2CT0jbEdny6k0" />
-                </div>
             </div>
         </header>
         <!-- Content Canvas -->
@@ -183,6 +173,7 @@
                     </div>
                     <div class="flex gap-3">
                         <button
+                            onclick="window.location.href='add-lesson/'"
                             class="px-6 py-3 bg-primary from-primary to-primary-container text-white font-bold rounded-xl shadow-md hover:opacity-90 transition-opacity flex items-center gap-2">
                             <span class="material-symbols-outlined text-xl" data-icon="add">add</span>
                             Add Lesson
